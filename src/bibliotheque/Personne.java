@@ -33,11 +33,10 @@ public class Personne {
      * @param anneeNaissance : année de naissance de la personne
      */
     public Personne(String nom, String prenom, int anneeNaissance){
+        numeroPers = getNextNumPers();
         nomPers = nom;
         prenomPers = prenom;
         anNaissance = anneeNaissance;              
-        numeroPers = dernierNumero;
-        dernierNumero = dernierNumero + 1; 
     }
 
     // Gestion des numéros de personne 
@@ -45,18 +44,11 @@ public class Personne {
      * Méthode d'affectation du numéro de personne
      * @param numero 
      */
-    public void setNumPers(int numero){
-        numeroPers = numero;
+    private int getNextNumPers(){
+        int numero = dernierNumero; 
+        dernierNumero = dernierNumero + 1;
+        return numero; 
     }
-
-    /**
-     * Retourne le dernier numéro disponible
-     * @return dernierNumero
-     */
-    public int getDernierNum(){
-        return dernierNumero;
-    }
-
    
     // Getters
     /**
