@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
@@ -35,6 +36,7 @@ public class PersonneTest {
     /**
      * Test of getNumero method, of class Personne.
      */
+    @Ignore
     @Test
     public void testGetNumero() {
         fail("Test à implémenter plus tard");    
@@ -70,6 +72,7 @@ public class PersonneTest {
     /**
      * Test of getDernierNum method, of class Personne.
      */
+    @Ignore
     @Test
     public void testGetDernierNum() {
         fail("Test à implémenter plus tard");
