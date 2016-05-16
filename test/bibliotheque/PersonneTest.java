@@ -39,8 +39,12 @@ public class PersonneTest {
     @Test
     public void testGetNumero() {
         Personne alan = new Personne("Turing", "Alan", 1912);
-        alan.setNumPers(42);
-        assertEquals(42, alan.getNumero());
+        Personne marvin = new Personne("Minsky", "Marvin", 1927);
+        
+        int numAlan = alan.getNumero();
+        int numMarvin = marvin.getNumero();
+       
+        assertTrue("Les numéros doivent se suivre", numMarvin == (numAlan+1));
     }
 
     /**
@@ -70,25 +74,6 @@ public class PersonneTest {
         assertEquals(1912, alan.getAnNaissance());
     }
 
-    /**
-     * Test of getDernierNum method, of class Personne.
-     */
-    @Test
-    public void testGetDernierNum() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        // Observez l'emploi du assertTrue, ainsi que du message d'information 
-        assertTrue("Le numéro doit être positif", alan.getDernierNum()>0);
-    }
-
-    /**
-     * Test of setNumPers method, of class Personne.
-     */
-    @Test
-    public void testSetNumPers() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        alan.setNumPers(18);
-        assertEquals(18, alan.getNumero());
-    }
 
     /**
      * Test of setNomPers method, of class Personne.
