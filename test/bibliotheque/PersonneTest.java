@@ -36,10 +36,11 @@ public class PersonneTest {
     /**
      * Test of getNumero method, of class Personne.
      */
-    @Ignore
     @Test
     public void testGetNumero() {
-        fail("Test à implémenter plus tard");    
+        Personne alan = new Personne("Turing", "Alan", 1912);
+        alan.setNumPers(42);
+        assertEquals(42, alan.getNumero());
     }
 
     /**
@@ -72,10 +73,11 @@ public class PersonneTest {
     /**
      * Test of getDernierNum method, of class Personne.
      */
-    @Ignore
     @Test
     public void testGetDernierNum() {
-        fail("Test à implémenter plus tard");
+        Personne alan = new Personne("Turing", "Alan", 1912);
+        // Observez l'emploi du assertTrue, ainsi que du message d'information 
+        assertTrue("Le numéro doit être positif", alan.getDernierNum()>0);
     }
 
     /**
@@ -128,3 +130,4 @@ public class PersonneTest {
     }
     
 }
+    
