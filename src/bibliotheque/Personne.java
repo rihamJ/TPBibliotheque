@@ -33,6 +33,9 @@ public class Personne {
      * @param anneeNaissance : année de naissance de la personne
      */
     public Personne(String nom, String prenom, int anneeNaissance){
+        nomPers = nom;
+        prenomPers = prenom;
+        anNaissance = anneeNaissance;              
     }
 
     // Gestion des numéros de personne 
@@ -41,6 +44,7 @@ public class Personne {
      * @param numero 
      */
     public void setNumPers(int numero){
+        numeroPers = numero;
     }
 
     /**
@@ -48,7 +52,7 @@ public class Personne {
      * @return dernierNumero
      */
     public int getDernierNum(){
-        return 0;
+        return dernierNumero;
     }
 
    
@@ -58,7 +62,7 @@ public class Personne {
      * @return numeroPers  
      */
     public int getNumero(){
-        return 0;
+        return numeroPers;
     }
     
     /**
@@ -66,7 +70,7 @@ public class Personne {
      * @return nomPers
      */
     public String getNom(){
-        return "";
+        return nomPers;
     }
     
     /**
@@ -74,7 +78,7 @@ public class Personne {
      * @return prenomPers
      */
     public String getPrenom(){
-        return "";
+        return prenomPers;
     }
 
     /**
@@ -82,7 +86,7 @@ public class Personne {
      * @return anNaissance
      */
     public int getAnNaissance(){
-        return 0;
+        return anNaissance;
     }
 
     
@@ -92,6 +96,7 @@ public class Personne {
      * @param nom 
      */
     public void setNomPers(String nom){     
+        nomPers = nom;
     }
 
     /**
@@ -99,6 +104,7 @@ public class Personne {
      * @param prenom 
      */
     public void setPrenomPers(String prenom){
+        prenomPers = prenom;
     }
     
     /**
@@ -106,6 +112,7 @@ public class Personne {
      * @param annee
      */
     public void setAnNaissance(int annee){
+        anNaissance = annee;
     }
 
     // Méthode toString 
@@ -116,6 +123,7 @@ public class Personne {
      */
     @Override
     public String toString(){
-        return "To be completed"; 
+        String description = nomPers + ", " + prenomPers + ", " + anNaissance;
+        return description; 
     }
 }
