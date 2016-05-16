@@ -36,6 +36,8 @@ public class Personne {
         nomPers = nom;
         prenomPers = prenom;
         anNaissance = anneeNaissance;              
+        numeroPers = dernierNumero;
+        dernierNumero = dernierNumero + 1; 
     }
 
     // Gestion des numéros de personne 
