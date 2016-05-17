@@ -17,11 +17,22 @@ import static org.junit.Assert.*;
  */
 public class ListePersonnesTest {
     
+    static ListePersonnes maliste;
+    static Personne alan;
+    static Personne marvin;
+    static Personne alanR;
+    
     public ListePersonnesTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        maliste = new ListePersonnes();
+        alan = new Personne("Turing", "Alan", 1912);
+        marvin = new Personne("Minsky", "Marvin", 1927);
+        alanR = new Personne("Rickman", "Alan", 1946);
+        maliste.ajouterPersonne(alan);
+        maliste.ajouterPersonne(marvin);
     }
     
     @AfterClass
@@ -41,10 +52,7 @@ public class ListePersonnesTest {
      */
     @Test
     public void testAjouterPersonne() {
-        ListePersonnes maliste = new ListePersonnes();
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        maliste.ajouterPersonne(alan);
-        assertEquals(1, maliste.getNbPersonnes());
+        assertEquals(2, maliste.getNbPersonnes());
     }
 
     /**
@@ -52,9 +60,6 @@ public class ListePersonnesTest {
      */
     @Test
     public void testAppartient_Personne() {
-        ListePersonnes maliste = new ListePersonnes();
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        maliste.ajouterPersonne(alan);
         assertTrue(maliste.appartient(alan));
     }
 
@@ -63,11 +68,8 @@ public class ListePersonnesTest {
      */
     @Test
     public void testNAppartientPas_Personne() {
-        ListePersonnes maliste = new ListePersonnes();
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        Personne marvin = new Personne("Minsky", "Marvin", 1927);
-        maliste.ajouterPersonne(alan);
-        assertFalse(maliste.appartient(marvin));
+        Personne albert = new Personne("Einstein", "Albert", 1879);
+        assertFalse(maliste.appartient(albert));
     }
 
     /**
@@ -75,9 +77,6 @@ public class ListePersonnesTest {
      */
     @Test
     public void testAppartientNomPrenom() {
-        ListePersonnes maliste = new ListePersonnes();
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        maliste.ajouterPersonne(alan);
         assertTrue(maliste.appartient("Turing", "Alan")); 
     }
 
@@ -86,27 +85,15 @@ public class ListePersonnesTest {
      */
     @Test
     public void testNAppartientPasNomPrenom() {
-        ListePersonnes maliste = new ListePersonnes();
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        Personne marvin = new Personne("Minsky", "Marvin", 1927);
-        maliste.ajouterPersonne(alan);
-        assertFalse(maliste.appartient("Minsky", "Marvin")); 
+        assertFalse(maliste.appartient("Einstein", "Albert")); 
     }
-
 
     /**
      * Test of appartient method, of class ListePersonnes, avec nom, prenom
      */
     @Test
     public void testAppartientJusteNom() {
-        ListePersonnes maliste = new ListePersonnes();
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        Personne marvin = new Personne("Minsky", "Marvin", 1927);
-        Personne alanR = new Personne("Rickman", "Alan", 1946);
-        maliste.ajouterPersonne(alan);
-        maliste.ajouterPersonne(marvin);
-        assertFalse(maliste.appartient("Rickman", "Alan")); 
+        assertFalse(maliste.appartient("Einstein", "Albert")); 
     }
 
-    
 }
