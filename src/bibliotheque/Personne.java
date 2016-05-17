@@ -117,7 +117,7 @@ public class Personne {
      */
     @Override
     public String toString(){
-        String description = nomPers + ", " + prenomPers + ", " + anNaissance;
+        String description = numeroPers + ", " + nomPers + ", " + prenomPers + ", " + anNaissance;
         return description; 
     }
 }
