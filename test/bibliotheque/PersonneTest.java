@@ -114,7 +114,7 @@ public class PersonneTest {
      */
     @Test
     public void testToString() {
-        assertEquals("Turing, Alan, 1912", alan.toString());
+        assertEquals("0, Turing, Alan, 1912", alan.toString());
     }
     
 }
