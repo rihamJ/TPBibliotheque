@@ -1,3 +1,7 @@
+/**
+ * Bibliothèque
+ * TP CVDA 2016 - Amélie Cordier
+ */
 package bibliotheque;
 
 import org.junit.After;
@@ -9,16 +13,21 @@ import static org.junit.Assert.*;
 import org.junit.Ignore;
 
 /**
- *
+ * Classe PersonneTest
  * @author Amélie Cordier   
  */
 public class PersonneTest {
-        
+    
+    private static Personne alan;
+    private static Personne marvin;
+    
     public PersonneTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        alan = new Personne("Turing", "Alan", 1912);
+        marvin = new Personne("Minsky", "Marvin", 1927);
     }
     
     @AfterClass
@@ -27,6 +36,9 @@ public class PersonneTest {
     
     @Before
     public void setUp() {
+        System.out.println("--- Next test ---");
+        System.out.println(alan.toString());
+        System.out.println(marvin.toString());
     }
     
     @After
@@ -37,13 +49,9 @@ public class PersonneTest {
      * Test of getNumero method, of class Personne.
      */
     @Test
-    public void testGetNumero() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        Personne marvin = new Personne("Minsky", "Marvin", 1927);
-        
+    public void testGetNumero() {       
         int numAlan = alan.getNumero();
         int numMarvin = marvin.getNumero();
-       
         assertTrue("Les numéros doivent se suivre", numMarvin == (numAlan+1));
     }
 
@@ -52,7 +60,6 @@ public class PersonneTest {
      */
     @Test
     public void testGetNom() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
         assertEquals("Turing", alan.getNom());
     }
 
@@ -61,7 +68,6 @@ public class PersonneTest {
      */
     @Test
     public void testGetPrenom() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
         assertEquals("Alan", alan.getPrenom());
     }
 
@@ -70,19 +76,17 @@ public class PersonneTest {
      */
     @Test
     public void testGetAnNaissance() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
         assertEquals(1912, alan.getAnNaissance());
     }
-
 
     /**
      * Test of setNomPers method, of class Personne.
      */
     @Test
     public void testSetNomPers() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        alan.setNomPers("Minsky");
-        assertEquals("Minsky", alan.getNom());
+        Personne inconnu = new Personne("?", "?", 0);
+        inconnu.setNomPers("Mystère");
+        assertEquals("Mystère", inconnu.getNom());
     }
 
     /**
@@ -90,9 +94,9 @@ public class PersonneTest {
      */
     @Test
     public void testSetPrenomPers() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        alan.setPrenomPers("Marvin");
-        assertEquals("Marvin", alan.getPrenom());
+        Personne inconnu = new Personne("?", "?", 0);
+        inconnu.setPrenomPers("Bouldegom");
+        assertEquals("Bouldegom", inconnu.getPrenom());
     }
 
     /**
@@ -100,9 +104,9 @@ public class PersonneTest {
      */
     @Test
     public void testSetAnNaissance() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        alan.setAnNaissance(1990);
-        assertEquals(1990, alan.getAnNaissance());
+        Personne inconnu = new Personne("?", "?", 0);
+        inconnu.setAnNaissance(1990);
+        assertEquals(1990, inconnu.getAnNaissance());
     }
 
     /**
@@ -110,7 +114,6 @@ public class PersonneTest {
      */
     @Test
     public void testToString() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
         assertEquals("Turing, Alan, 1912", alan.toString());
     }
     
