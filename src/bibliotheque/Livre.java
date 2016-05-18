@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bibliotheque;
 
 /**
@@ -11,52 +6,58 @@ package bibliotheque;
  */
 public class Livre {
     
-    private int NumLivre;
+    private int numLivre;
     private String titre;
     private int nombreDePages;
     private Personne auteur;
     
     private static int dernierNum;
     
-    public Livre(String titre, int nbpages, Personne auteur){
-        
+    public Livre(String titrelivre, int nbpages, Personne auteurlivre){
+        numLivre = getNextNumLivre();
+        titre = titrelivre;
+        nombreDePages = nbpages;
+        auteur = auteurlivre;
     }
     
     public int getNumLivre(){
-        return 0;
+        return numLivre;
     }
     
     public String getTitre(){
-        return "";
+        return titre;
     }
     
     public int getNombreDePages(){
-        return 0;
+        return nombreDePages;
     }
     
     public Personne getAuteur(){
-        Personne p = new Personne("", "", 0);
-        return p;
+        return auteur;
     }
     
-    public void setNumLivre(int numero){
-        
+    private int getNextNumLivre(){
+        int numero = dernierNum; 
+        dernierNum = dernierNum + 1;
+        return numero; 
     }
     
-    public void setTitre(String titre){
-        
+    
+    public void setTitre(String titrelivre){
+        titre = titrelivre;
     }
     
     public void setAuteur(Personne p){
-        
+        auteur = p;
     }
     
     public void setNombreDePages(int nbPages){
-        
+        nombreDePages = nbPages;
     }
     
     public String toString(){
-        return "";
+        Personne a = auteur;
+        return titre + ", " + a.getPrenom() + " " + a.getNom()+ ", " + nombreDePages + "p.";
     }
 }
-
+        
