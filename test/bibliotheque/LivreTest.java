@@ -47,7 +47,17 @@ public class LivreTest {
      */
     @Test
     public void testGetNumLivre() {
-        assertEquals(1, computing.getNumLivre());
+        assertEquals(0, computing.getNumLivre());
+    }
+
+    /**
+     * Test of getNumLivre method, of class Livre.
+     */
+    @Test
+    public void testGetNumLivreTwoBooks() {
+        Livre mind = new Livre("mind", 0, alan);
+        Livre mind2 = new Livre("mind2", 0, alan);
+        assertEquals(mind.getNumLivre()+1, mind2.getNumLivre());
     }
 
     /**
@@ -75,14 +85,6 @@ public class LivreTest {
         assertEquals(alan, computing.getAuteur());
     }
 
-    /**
-     * Test of setNumLivre method, of class Livre.
-     */
-    @Ignore
-    @Test
-    public void testSetNumLivre() {
-        fail("Ce test sera traité plus tard");
-    }
 
     /**
      * Test of setTitre method, of class Livre.
