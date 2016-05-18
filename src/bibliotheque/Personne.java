@@ -15,48 +15,71 @@ public class Personne {
     /**
      * Variables d'instances
      */
-    private int numeroPers;
+    private int numPers;
     private String nomPers;
     private String prenomPers;
-    private int anNaissance;
+    private int anNaissPers;
     
     /**
      * Variable de classe pour gérer la numérotation des personnes
      */
-    private static int dernierNumero = 0;
+    private static int _dernierNumero = 0;
 
+    /* Commentaire de correction. par rapport à l'énoncé initial, 
+       on a modifié la façon de gérer ce numéro pour le rendre plus 
+       sûr : la variable est privée, de même que la méthode qui permet
+       d'affecter un n° à une personne. Ainsi, on s'assure que les numéros
+       ne peuvent pas être modifiés par n'importe qui et/ou n'importe quand.
+    */
+
+    
     
     /**
      * Constructeur
-     * @param nom : nom de la personne
-     * @param prenom : prénom de la personne 
-     * @param anneeNaissance : année de naissance de la personne
+     * @param nom nom de la personne
+     * @param prenom prénom de la personne 
+     * @param anneeNaissance année de naissance de la personne au format YYYY
      */
     public Personne(String nom, String prenom, int anneeNaissance){
-        numeroPers = getNextNumPers();
+        numPers = getNumPersSuivant();
         nomPers = nom;
         prenomPers = prenom;
-        anNaissance = anneeNaissance;              
+        anNaissPers = anneeNaissance;              
     }
-
-    // Gestion des numéros de personne 
+    
     /**
-     * Méthode d'affectation du numéro de personne
-     * @param numero 
+     * Constructeur vierge
+     * Construit une personne "vide"
      */
-    private int getNextNumPers(){
-        int numero = dernierNumero; 
-        dernierNumero = dernierNumero + 1;
+    public Personne(){
+        numPers = getNumPersSuivant();
+        nomPers = "";
+        prenomPers = "";
+        anNaissPers = 0;
+    }
+    /*
+    Commentaire de correction : 
+    ce constructeur n'est pas "requis" dans le sujet,
+    mais il peut s'avérer utile. 
+    */
+
+    /**
+     * Retourne le numéro de la personne
+     * @return numéro affecté à la personne 
+     */
+    private int getNumPersSuivant(){
+        int numero = _dernierNumero; 
+        _dernierNumero = _dernierNumero + 1;
         return numero; 
     }
    
     // Getters
     /**
      * Retourne le n° de la personne
-     * @return numeroPers  
+     * @return numPers  
      */
     public int getNumero(){
-        return numeroPers;
+        return numPers;
     }
     
     /**
@@ -77,17 +100,17 @@ public class Personne {
 
     /**
      * Retourne l'année de naissance de la personne
-     * @return anNaissance
+     * @return anNaissPers
      */
     public int getAnNaissance(){
-        return anNaissance;
+        return anNaissPers;
     }
 
     
     // Setters 
     /**
      * Fixe le nom de la personne 
-     * @param nom 
+     * @param nom le nom de la personne 
      */
     public void setNomPers(String nom){     
         nomPers = nom;
@@ -95,7 +118,7 @@ public class Personne {
 
     /**
      * Fixe le prénom de la personne 
-     * @param prenom 
+     * @param prenom le prénom de la personne
      */
     public void setPrenomPers(String prenom){
         prenomPers = prenom;
@@ -103,21 +126,20 @@ public class Personne {
     
     /**
      * Fixe l'année de naissance de la personne 
-     * @param annee
+     * @param annee l'année de naissance de la personne
      */
     public void setAnNaissance(int annee){
-        anNaissance = annee;
+        anNaissPers = annee;
     }
 
-    // Méthode toString 
-
+ 
     /**
      * Override de la méthode toString 
      * @return chaine de caractère représentant la personne
      */
     @Override
     public String toString(){
-        String description = numeroPers + ", " + nomPers + ", " + prenomPers + ", " + anNaissance;
+        String description = numPers + ", " + nomPers + ", " + prenomPers + ", " + anNaissPers;
         return description; 
     }
 }

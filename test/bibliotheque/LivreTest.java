@@ -10,20 +10,26 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
 
 
 /**
- * Classe PersonneTest
- * @author Amélie Cordier   
+ * Classe LivreTest
+ * @author Amélie Cordier - IUT Lyon 1
+ * @version 1.0
+ * mai 2016
  */
 public class LivreTest {
     
     static Personne alan;
     static Livre computing;
+    
     public LivreTest() {
     }
     
+    /**
+     * Création d'une personne et d'un livre à l'initialisation des tests.
+     * Ces éléments ne seront pas modifiées par la suite. 
+     */
     @BeforeClass
     public static void setUpClass() {
         alan = new Personne("Turing", "Alan", 1912);
@@ -43,7 +49,7 @@ public class LivreTest {
     }
 
     /**
-     * Test of getNumLivre method, of class Livre.
+     * Test de getNumLivre de la classe Livre.
      */
     @Test
     public void testGetNumLivre() {
@@ -51,7 +57,7 @@ public class LivreTest {
     }
 
     /**
-     * Test of getNumLivre method, of class Livre.
+     * Test de getNumLivre de la classe Livre.
      */
     @Test
     public void testGetNumLivreTwoBooks() {
@@ -61,7 +67,7 @@ public class LivreTest {
     }
 
     /**
-     * Test of getTitre method, of class Livre.
+     * Test de getTitre de la classe Livre.
      */
     @Test
     public void testGetTitre() {
@@ -70,7 +76,7 @@ public class LivreTest {
     }
 
     /**
-     * Test of getNombreDePages method, of class Livre.
+     * Test de getNombreDePages de la classe Livre.
      */
     @Test
     public void testGetNombreDePages() {
@@ -78,16 +84,15 @@ public class LivreTest {
     }
 
     /**
-     * Test of getAuteur method, of class Livre.
+     * Test de getAuteur de la classe Livre.
      */
     @Test
     public void testGetAuteur() {
         assertEquals(alan, computing.getAuteur());
     }
 
-
     /**
-     * Test of setTitre method, of class Livre.
+     * Test de setTitre de la classe Livre.
      */
     @Test
     public void testSetTitre() {
@@ -97,7 +102,7 @@ public class LivreTest {
     }
 
     /**
-     * Test of setAuteur method, of class Livre.
+     * Test de setAuteur de la classe Livre.
      */
     @Test
     public void testSetAuteur() {
@@ -108,7 +113,7 @@ public class LivreTest {
     }
 
     /**
-     * Test of setNombreDePages method, of class Livre.
+     * Test de setNombreDePages de la classe Livre.
      */
     @Test
     public void testSetNombreDePages() {
@@ -118,7 +123,7 @@ public class LivreTest {
     }
 
     /**
-     * Test of toString method, of class Livre.
+     * Test de toString de la classe Livre.
      */
     @Test
     public void testToString() {

@@ -12,8 +12,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author Amelie
+ * Classe ListePersonnesTest
+ * @author Amélie Cordier - IUT Lyon 1
+ * @version 1.0
+ * mai 2016
  */
 public class ListePersonnesTest {
     
@@ -48,7 +50,7 @@ public class ListePersonnesTest {
     }
 
     /**
-     * Test of ajouterPersonne method, of class ListePersonnes.
+     * Test de ajouterPersonne de la classe ListePersonnes
      */
     @Test
     public void testAjouterPersonne() {
@@ -56,7 +58,8 @@ public class ListePersonnesTest {
     }
 
     /**
-     * Test of appartient method, of class ListePersonnes.
+     * Test de appartient de la classe ListePersonnes
+     * avec une Personne, quand elle appartient à la liste
      */
     @Test
     public void testAppartient_Personne() {
@@ -64,7 +67,8 @@ public class ListePersonnesTest {
     }
 
     /**
-     * Test of appartient method, of class ListePersonnes.
+     * Test de appartient de la classe ListePersonnes
+     * avec une Personne, quand elle n'appartient pas à la liste
      */
     @Test
     public void testNAppartientPas_Personne() {
@@ -73,7 +77,8 @@ public class ListePersonnesTest {
     }
 
     /**
-     * Test of appartient method, of class ListePersonnes, avec nom, prenom
+     * Test de appartient de la classe ListePersonnes
+     * avec nom, prenom, quand la personne appartient à la liste
      */
     @Test
     public void testAppartientNomPrenom() {
@@ -81,7 +86,8 @@ public class ListePersonnesTest {
     }
 
     /**
-     * Test of appartient method, of class ListePersonnes, avec nom, prenom
+     * Test de appartient de la classe ListePersonnes
+     * avec nom, prenom, quand la personne n'appartient pas à la liste
      */
     @Test
     public void testNAppartientPasNomPrenom() {
@@ -89,7 +95,8 @@ public class ListePersonnesTest {
     }
 
     /**
-     * Test of appartient method, of class ListePersonnes, avec nom, prenom
+     * Test de appartient de la classe ListePersonnes
+     * avec seulement le nom 
      */
     @Test
     public void testAppartientJusteNom() {

@@ -10,11 +10,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
 
 /**
  * Classe PersonneTest
- * @author Amélie Cordier   
+ * @author Amélie Cordier - IUT Lyon 1
+ * @version 1.0
+ * mai 2016
  */
 public class PersonneTest {
     
@@ -23,7 +24,11 @@ public class PersonneTest {
     
     public PersonneTest() {
     }
-    
+
+    /**
+     * Création de deux personnes, à l'initialisation des tests.
+     * Ces personnes ne seront pas modifiées par la suite. 
+     */
     @BeforeClass
     public static void setUpClass() {
         alan = new Personne("Turing", "Alan", 1912);
@@ -36,17 +41,21 @@ public class PersonneTest {
     
     @Before
     public void setUp() {
-        System.out.println("--- Next test ---");
+        System.out.println("--- Test suivant ---");
         System.out.println(alan.toString());
         System.out.println(marvin.toString());
     }
-    
+   /*
+    Commentaire de correction : 
+    ceci a pour seul but d'illustrer le rôle de la méthode setUp
+    */
+
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of getNumero method, of class Personne.
+     * Test de getNumero de la classe Personne.
      */
     @Test
     public void testGetNumero() {       
@@ -56,7 +65,7 @@ public class PersonneTest {
     }
 
     /**
-     * Test of getNom method, of class Personne.
+     * Test de getNom de la classe Personne.
      */
     @Test
     public void testGetNom() {
@@ -64,7 +73,7 @@ public class PersonneTest {
     }
 
     /**
-     * Test of getPrenom method, of class Personne.
+     * Test de getPrenom de la classe Personne.
      */
     @Test
     public void testGetPrenom() {
@@ -72,7 +81,7 @@ public class PersonneTest {
     }
 
     /**
-     * Test of getAnNaissance method, of class Personne.
+     * Test de getAnNaissance de la classe Personne.
      */
     @Test
     public void testGetAnNaissance() {
@@ -80,7 +89,7 @@ public class PersonneTest {
     }
 
     /**
-     * Test of setNomPers method, of class Personne.
+     * Test de setNomPers, de la classe Personne.
      */
     @Test
     public void testSetNomPers() {
@@ -90,7 +99,7 @@ public class PersonneTest {
     }
 
     /**
-     * Test of setPrenomPerso method, of class Personne.
+     * Test de setPrenomPers de la classe Personne.
      */
     @Test
     public void testSetPrenomPers() {
@@ -100,7 +109,7 @@ public class PersonneTest {
     }
 
     /**
-     * Test of setAnNaissance method, of class Personne.
+     * Test de setAnNaissance de la classe Personne.
      */
     @Test
     public void testSetAnNaissance() {
@@ -110,7 +119,7 @@ public class PersonneTest {
     }
 
     /**
-     * Test of toString method, of class Personne.
+     * Test de toString de la classe Personne.
      */
     @Test
     public void testToString() {
